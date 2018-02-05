@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import $ from "jquery";
-import Authentification from "./components/Authentification";
+import Authentication from "./components/Authentication";
 import Todos from "./components/Todos";
 
 
@@ -53,7 +53,7 @@ class App extends Component {
                 {
                     !this.state.logged &&
                     <div className={"auth-container"}>
-                        <Authentification getContent={() => this.getContent()}/>
+                        <Authentication getContent={() => this.getContent()}/>
                     </div>
                 }
 

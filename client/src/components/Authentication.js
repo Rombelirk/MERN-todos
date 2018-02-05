@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Login from "./Login";
 import Signup from "./Signup";
 
-class Authentification extends Component {
+class Authentication extends Component {
 
     constructor(props) {
         super(props);
@@ -35,4 +35,4 @@ class Authentification extends Component {
     }
 }
 
-export default Authentification;
+export default Authentication;
