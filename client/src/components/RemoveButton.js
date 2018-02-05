@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import $ from "jquery";
+
 
 export default class RemoveButton extends Component {
     constructor(props) {

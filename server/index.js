@@ -2,8 +2,6 @@ var express = require("express");
 var mongoose = require('mongoose');
 var User = require('./user');
 var bodyParser = require('body-parser');
-var cookieSession = require('cookie-session');
-// var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var cors = require('cors');
 
@@ -13,7 +11,7 @@ app.use(cors({
     credentials: true,
 }));
 
-app.set('trust proxy', 1); // trust first proxy
+app.set('trust proxy', 1);
 app.use(session({
     secret: 'keyboard cat',
 
@@ -21,8 +19,8 @@ app.use(session({
 
 app.use(express.static(__dirname + '/../client/build'));
 
-app.use(bodyParser.json());       // to support JSON-encoded bodies
-app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
     extended: true
 }));
 
@@ -71,12 +69,6 @@ app.post('/signup', function (req, res) {
         }
 
     });
-});
-
-app.post('/signup', function (req, res) {
-    // User.find({username: req.session.username}).then(result => {
-    //    result
-    // });
 });
 
 
@@ -185,11 +177,5 @@ app.listen(3001);
 
 mongoose.connect('mongodb://localhost/test');
 
-// var vasya = new User({username: "Roman", password: "taburetka"});
-// vasya.save().then(function(){console.log("saved")});
 
-
-// User.remove({username: undefined}).then(()=>console.log("removed"));
-
-// 123
 
