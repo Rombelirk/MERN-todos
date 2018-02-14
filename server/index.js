@@ -3,20 +3,9 @@ var mongoose = require('mongoose');
 
 
 var app = express();
+var dependencies = require("./config/"+app.get('env'));
 
-const dependencies = {
-    settings: [
-        "settings/settings"
-    ],
-    middleware: [
-        "middleware/middleware"
-    ],
-    routes: [
-        "routes/users",
-        "routes/todos",
-        "routes/view"
-    ]
-};
+
 
 Object.keys(dependencies).map(
     el => {
@@ -28,9 +17,10 @@ Object.keys(dependencies).map(
     }
 );
 
+mongoose.connect('mongodb://localhost/test');
 app.listen(3001);
 
-mongoose.connect('mongodb://localhost/test');
+
 
 
 
