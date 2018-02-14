@@ -1,4 +1,4 @@
-var User = require('../user');
+var User = require('../models/user');
 
 module.exports = function (app) {
     app.get('/get_todos', function (req, res) {
